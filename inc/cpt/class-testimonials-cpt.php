@@ -34,12 +34,12 @@ class Testimonials_CPT {
       'items_list_navigation' => __( 'Posts List Navigation', 'wp-projects-testimonials' ),
       'filter_items_list'     => __( 'Filter Posts List', 'wp-projects-testimonials' ),
     );
-  
+
     $args = array(
       'label'                 => __( 'Testimonials', 'wp-projects-testimonials' ),
       'description'           => __( 'Client Testimonials', 'wp-projects-testimonials' ),
       'labels'                => $labels,
-      'supports'              => array( 'title' ),
+      'supports'              => array( 'revisions' ),
       'hierarchical'          => false,
       'public'                => true,
       'show_ui'               => true,
@@ -54,7 +54,7 @@ class Testimonials_CPT {
       'exclude_from_search'   => true,
       'publicly_queryable'    => false,
       'capability_type'       => 'post',
-      'rewrite'               => array('slug' => 'testimonials'),
+      'rewrite'               => false,
       'taxonomies'            => array('Client'),
     );
     register_post_type( 'wppt_testimonials', $args );

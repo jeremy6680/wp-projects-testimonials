@@ -48,3 +48,15 @@ $projects_settings = new Projects_Settings();
 // 6. Templates
 require_once WPPT_PLUGIN_PATH . 'inc/front/class-projects-tpl.php';
 $projects_templates = new Projects_TPL();
+
+// 7. Shortcodes
+require_once WPPT_PLUGIN_PATH . 'inc/shortcodes/class-testimonial-shortcodes.php';
+$testimonial_shortcodes = new Testimonial_Shortcodes();
+
+// 8. Admin
+require_once WPPT_PLUGIN_PATH . 'inc/admin/class-testimonials-admin.php';
+$testimonial_admin = new Testimonials_Admin();
+
+
+
+
