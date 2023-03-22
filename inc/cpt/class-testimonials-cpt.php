@@ -1,17 +1,16 @@
 <?php
-
-class Projects_CPT {
+class Testimonials_CPT {
   function __construct() {
     add_action( 'init', array( $this, 'register_custom_post_type' ) );
   }
 
   function register_custom_post_type() {
     $labels = array(
-      'name'                  => _x( 'Projects', 'Post Type General Name', 'wp-projects-testimonials' ),
-      'singular_name'         => _x( 'Project', 'Post Type Singular Name', 'wp-projects-testimonials' ),
-      'menu_name'             => __( 'Projects', 'wp-projects-testimonials' ),
-      'name_admin_bar'        => __( 'Projects', 'wp-projects-testimonials' ),
-      'archives'              => __( 'Projects Archive', 'wp-projects-testimonials' ),
+      'name'                  => _x( 'Testimonials', 'Post Type General Name', 'wp-projects-testimonials' ),
+      'singular_name'         => _x( 'Testimonial', 'Post Type Singular Name', 'wp-projects-testimonials' ),
+      'menu_name'             => __( 'Testimonials', 'wp-projects-testimonials' ),
+      'name_admin_bar'        => __( 'Testimonials', 'wp-projects-testimonials' ),
+      'archives'              => __( 'Testimonials Archive', 'wp-projects-testimonials' ),
       'attributes'            => __( 'Post Attributes', 'wp-projects-testimonials' ),
       'parent_item_colon'     => __( 'Parent Post', 'wp-projects-testimonials' ),
       'all_items'             => __( 'All Posts', 'wp-projects-testimonials' ),
@@ -35,29 +34,29 @@ class Projects_CPT {
       'items_list_navigation' => __( 'Posts List Navigation', 'wp-projects-testimonials' ),
       'filter_items_list'     => __( 'Filter Posts List', 'wp-projects-testimonials' ),
     );
-
+  
     $args = array(
-      'label'                 => __( 'Projects', 'wp-projects-testimonials' ),
-      'description'           => __( 'Projects Portfolio', 'wp-projects-testimonials' ),
+      'label'                 => __( 'Testimonials', 'wp-projects-testimonials' ),
+      'description'           => __( 'Client Testimonials', 'wp-projects-testimonials' ),
       'labels'                => $labels,
-      'supports'              => array( 'title', 'excerpt', 'thumbnail', 'revisions' ),
+      'supports'              => array( 'title' ),
       'hierarchical'          => false,
       'public'                => true,
       'show_ui'               => true,
       'show_in_menu'          => true,
       'menu_position'         => 20,
-      'menu_icon'             => 'dashicons-portfolio',
+      'menu_icon'             => 'dashicons-format-quote',
       'show_in_admin_bar'     => true,
       'show_in_rest'          => true,
       'show_in_nav_menus'     => true,
       'can_export'            => true,
-      'has_archive'           => true,
-      'exclude_from_search'   => false,
-      'publicly_queryable'    => true,
+      'has_archive'           => false,
+      'exclude_from_search'   => true,
+      'publicly_queryable'    => false,
       'capability_type'       => 'post',
-      'rewrite'               => true,
+      'rewrite'               => array('slug' => 'testimonials'),
       'taxonomies'            => array('Client'),
     );
-    register_post_type( 'projects', $args );
+    register_post_type( 'jm_testimonials', $args );
   }
 }
