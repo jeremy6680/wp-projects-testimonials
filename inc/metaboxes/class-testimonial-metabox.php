@@ -5,7 +5,7 @@
 
       class TestimonialMetabox {
 
-        private $screens = array('jm_testimonials');
+        private $screens = array('wppt_testimonials');
 
         private $fields = array(
           array(

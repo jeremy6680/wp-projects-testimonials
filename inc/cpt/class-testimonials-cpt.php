@@ -57,6 +57,6 @@ class Testimonials_CPT {
       'rewrite'               => array('slug' => 'testimonials'),
       'taxonomies'            => array('Client'),
     );
-    register_post_type( 'jm_testimonials', $args );
+    register_post_type( 'wppt_testimonials', $args );
   }
 }

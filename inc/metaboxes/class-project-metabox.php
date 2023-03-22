@@ -5,7 +5,7 @@
 
       class ProjectMetabox {
 
-        private $screens = array('jm_projects');
+        private $screens = array('wppt_projects');
 
         private $fields = array(
           array(

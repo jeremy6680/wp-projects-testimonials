@@ -58,6 +58,6 @@ class Projects_CPT {
       'rewrite'               => array('slug' => 'projects'),
       'taxonomies'            => array('Client'),
     );
-    register_post_type( 'jm_projects', $args );
+    register_post_type( 'wppt_projects', $args );
   }
 }

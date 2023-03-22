@@ -7,34 +7,44 @@ Author: Jeremy Marchandeau
 Author URI: https://jeremymarchandeau.com
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: wp-projects-testimonials
+Text Domain: wppt-plugin
 Domain Path: /languages
 */
-    
-// Define the custom post type "Projects"
-require_once plugin_dir_path( __FILE__ ) . 'inc/cpt/class-projects-cpt.php';
-$projects_cpt = new Projects_CPT();
 
-// Define the custom post type "Testimonials"
-require_once plugin_dir_path( __FILE__ ) . 'inc/cpt/class-testimonials-cpt.php';
+// 1. Constants and Plugin Activation/Deactivation
+define( 'WPPT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'WPPT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+register_activation_hook( __FILE__, 'wppt_activate' );
+function wppt_activate() {
+    // Code to run on activation
+}
+
+register_deactivation_hook( __FILE__, 'wppt_deactivate' );
+function wppt_deactivate() {
+    // Code to run on deactivation
+}
+
+// 2. Custom Post Types
+require_once WPPT_PLUGIN_PATH . 'inc/cpt/class-projects-cpt.php';
+require_once WPPT_PLUGIN_PATH . 'inc/cpt/class-testimonials-cpt.php';
+$projects_cpt = new Projects_CPT();
 $testimonials_cpt = new Testimonials_CPT();
 
-// Define the custom taxonomy "Client"
-require_once plugin_dir_path( __FILE__ ) . 'inc/taxo/class-client-taxonomy.php';
+// 3. Custom Taxonomies
+require_once WPPT_PLUGIN_PATH . 'inc/taxo/class-client-taxonomy.php';
 $client_taxonomy = new Client_Taxonomy();
 
-// Load the ProjectMetabox class
-require_once( plugin_dir_path( __FILE__ ) . 'inc/metaboxes/class-project-metabox.php' );
+// 4. Metaboxes
+require_once WPPT_PLUGIN_PATH . 'inc/metaboxes/class-project-metabox.php';
+require_once WPPT_PLUGIN_PATH . 'inc/metaboxes/class-testimonial-metabox.php';
 $project_metabox = new ProjectMetabox();
-
-// Load the TestimonialMetabox class
-require_once( plugin_dir_path( __FILE__ ) . 'inc/metaboxes/class-testimonial-metabox.php' );
 $testimonial_metabox = new TestimonialMetabox();
 
-// Load the Settings class
-require_once( plugin_dir_path( __FILE__ ) . 'inc/admin/class-projects-settings.php' );
+// 5. Settings
+require_once WPPT_PLUGIN_PATH . 'inc/admin/class-projects-settings.php';
 $projects_settings = new Projects_Settings();
 
-// Load the projects templates class
-require_once( plugin_dir_path( __FILE__ ) . 'inc/front/class-projects-tpl.php' );
+// 6. Templates
+require_once WPPT_PLUGIN_PATH . 'inc/front/class-projects-tpl.php';
 $projects_templates = new Projects_TPL();

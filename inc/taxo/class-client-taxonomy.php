@@ -39,7 +39,7 @@ class Client_Taxonomy {
             'rewrite' => true,
           );
   
-          register_taxonomy( 'client', array('jm_projects', 'jm_testimonials'), $args );
+          register_taxonomy( 'client', array('wppt_projects', 'wppt_testimonials'), $args );
     }
 
     public function add_custom_fields($term) {
