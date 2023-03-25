@@ -11,19 +11,12 @@ Text Domain: wppt-plugin
 Domain Path: /languages
 */
 
-// 1. Constants and Plugin Activation/Deactivation
+// 0. Constants
 define( 'WPPT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WPPT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-register_activation_hook( __FILE__, 'wppt_activate' );
-function wppt_activate() {
-    // Code to run on activation
-}
-
-register_deactivation_hook( __FILE__, 'wppt_deactivate' );
-function wppt_deactivate() {
-    // Code to run on deactivation
-}
+// 1. Plugin Activation/Deactivation
+require_once WPPT_PLUGIN_PATH . 'inc/setup.php';
 
 // 2. Custom Post Types
 require_once WPPT_PLUGIN_PATH . 'inc/cpt/class-projects-cpt.php';
@@ -61,6 +54,5 @@ $testimonial_shortcodes = new Testimonial_Shortcodes();
 require_once WPPT_PLUGIN_PATH . 'inc/admin/class-testimonials-admin.php';
 $testimonial_admin = new Testimonials_Admin();
 
-
-
-
+// 10. Helper
+require_once WPPT_PLUGIN_PATH . 'inc/helper/class-wppt-helper.php';

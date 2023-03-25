@@ -8,14 +8,19 @@ $dark-color: #3e396b;
 
 
 .post-type-archive-wppt_projects {
+
+    .btn {
+      height: fit-content;
+    }
     .project {
-        opacity: 1;
-        transition: opacity 0.4s ease-in-out;
-      }
-      
-      .project.hidden {
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out;
-        display: none;
-      }
+      opacity: 1;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    .project.hidden {
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      display: none;
+    }
+    
 }
