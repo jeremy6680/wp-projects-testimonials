@@ -6,12 +6,17 @@ $dark-color: #3e396b;
 // Import full Spectre source code
 @import "../node_modules/spectre.css/src/spectre";
 
+.btn {
+  height: fit-content;
+}
+
+.promo-section {
+  margin: 48px 0 0 0;
+  padding: 24px 0;
+}
 
 .post-type-archive-wppt_projects {
 
-    .btn {
-      height: fit-content;
-    }
     .project {
       opacity: 1;
       transition: opacity 0.4s ease-in-out;
@@ -22,5 +27,15 @@ $dark-color: #3e396b;
       transition: opacity 0.4s ease-in-out;
       display: none;
     }
-    
+
+}
+
+.single-wppt_projects {
+
+  .client-card {
+    flex-direction: row;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  
 }
