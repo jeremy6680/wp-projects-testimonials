@@ -45,15 +45,19 @@ $testimonial_metabox = new TestimonialMetabox();
 require_once WPPT_PLUGIN_PATH . 'inc/admin/class-projects-settings.php';
 $projects_settings = new Projects_Settings();
 
-// 6. Templates
+// 6. Enqueues
+require_once WPPT_PLUGIN_PATH . 'inc/front/class-front-enqueues.php';
+$front_enqueues = new Front_Enqueues();
+
+// 7. Templates
 require_once WPPT_PLUGIN_PATH . 'inc/front/class-projects-tpl.php';
 $projects_templates = new Projects_TPL();
 
-// 7. Shortcodes
+// 8. Shortcodes
 require_once WPPT_PLUGIN_PATH . 'inc/shortcodes/class-testimonial-shortcodes.php';
 $testimonial_shortcodes = new Testimonial_Shortcodes();
 
-// 8. Admin
+// 9. Admin
 require_once WPPT_PLUGIN_PATH . 'inc/admin/class-testimonials-admin.php';
 $testimonial_admin = new Testimonials_Admin();
 
