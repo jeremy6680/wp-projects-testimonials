@@ -2,226 +2,148 @@
 
 get_header(); ?>
  
- <section class="cta-section theme-bg-light py-5">
-		    <div class="container text-center single-col-max-width">
-			    <h2 class="heading">Portfolio</h2>
-			    <div class="intro">
-			    <p>Welcome to my online portfolio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. I'm taking on freelance work at the moment. Want some help building your software?</p>
-			    
-			    </div>
-			    <a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane me-2"></i>Hire Me</a>
-			    
-			    
-		    </div><!--//container-->
-	    </section>
-	    <section class="projects-list px-3 py-5 p-md-5">
-		    <div class="container">
-			    <div class="text-center">
-				    <ul id="filters" class="filters mb-5 mx-auto   ps-0">
-		                <li class="type active mb-3 mb-lg-0" data-filter="*">All</li>
-		                <li class="type  mb-3 mb-lg-0" data-filter=".webapp">We App</li>
-		                <li class="type  mb-3 mb-lg-0" data-filter=".mobileapp">Mobile App</li>
-		                <li class="type  mb-3 mb-lg-0" data-filter=".frontend">Frontend</li>
-		                <li class="type  mb-3 mb-lg-0" data-filter=".backend">Backend</li>
-		            </ul><!--//filters-->
-			    </div>
-	            
-			    <div class="project-cards row isotope">
-					<div class="isotope-item col-md-6 mb-5 mobileapp frontend">
-						<div class="card project-card">
-							<div class="row">
-								<div class="col-12 col-xl-5 card-img-holder">
-									<img src="assets/images/project/project-1.jpg" class="card-img" alt="image">
-								</div>
-								<div class="col-12 col-xl-7">
-									<div class="card-body">
-										<h5 class="card-title"><a href="project.html" class="theme-link">Project Heading</a></h5>
-										<p class="card-text">Project intro lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-										<p class="card-text"><small class="text-muted">Client: Google</small></p>
-									</div>
-								</div>
-							</div>
-							<div class="link-mask">
-								<a class="link-mask-link" href="project.html"></a>
-								<div class="link-mask-text">
-									<a class="btn btn-secondary" href="project.html">
-										<i class="fas fa-eye me-2"></i>View Case Study
-									</a>
-								</div>
-							</div><!--//link-mask-->
-						</div><!--//card-->
-					</div><!--//col-->
-					<div class="isotope-item col-md-6 mb-5 webapp frontend">	
-						<div class="card project-card">
-							<div class="row">
-								<div class="col-12 col-xl-5 card-img-holder">
-									<img src="assets/images/project/project-2.jpg" class="card-img" alt="image">
-								</div>
-								<div class="col-12 col-xl-7">
-									<div class="card-body">
-										<h5 class="card-title"><a href="project.html" class="theme-link">Project Heading</a></h5>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-										<p class="card-text"><small class="text-muted">Client: Dropbox</small></p>
-									</div>
-								</div>
-							</div>
-							<div class="link-mask">
-								<a class="link-mask-link" href="project.html"></a>
-								<div class="link-mask-text">
-									<a class="btn btn-secondary" href="project.html">
-										<i class="fas fa-eye me-2"></i>View Case Study
-									</a>
-								</div>
-							</div><!--//link-mask-->
-						</div><!--//card-->
-					</div><!--//col-->
-					<div class="isotope-item col-md-6 mb-5 mobileapp">
-						<div class="card project-card">
-							<div class="row">
-								<div class="col-12 col-xl-5 card-img-holder">
-									<img src="assets/images/project/project-3.jpg" class="card-img" alt="image">
-								</div>
-								<div class="col-12 col-xl-7">
-									<div class="card-body">
-										<h5 class="card-title"><a href="project.html" class="theme-link">Project Heading</a></h5>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-										<p class="card-text"><small class="text-muted">Client: Google</small></p>
-									</div>
-								</div>
-							</div>
-							<div class="link-mask">
-								<a class="link-mask-link" href="project.html"></a>
-								<div class="link-mask-text">
-									<a class="btn btn-secondary" href="project.html">
-										<i class="fas fa-eye me-2"></i>View Case Study
-									</a>
-								</div>
-							</div><!--//link-mask-->
-						</div><!--//card-->
-					</div><!--//col-->
-					<div class="isotope-item col-md-6 mb-5 webapp backend">
-						<div class="card project-card">
-							<div class="row">
-								<div class="col-12 col-xl-5 card-img-holder">
-									<img src="assets/images/project/project-4.jpg" class="card-img" alt="image">
-								</div>
-								<div class="col-12 col-xl-7">
-									<div class="card-body">
-										<h5 class="card-title"><a href="project.html" class="theme-link">Project Heading</a></h5>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-										<p class="card-text"><small class="text-muted">Client: Startup Hub</small></p>
-									</div>
-								</div>
-							</div>
-							<div class="link-mask">
-								<a class="link-mask-link" href="project.html"></a>
-								<div class="link-mask-text">
-									<a class="btn btn-secondary" href="project.html">
-										<i class="fas fa-eye me-2"></i>View Case Study
-									</a>
-								</div>
-							</div><!--//link-mask-->
-						</div><!--//card-->
-					</div><!--//col-->
-					<div class="isotope-item col-md-6 mb-5 mobileapp frontend">
-						<div class="card project-card">
-							<div class="row">
-								<div class="col-12 col-xl-5 card-img-holder">
-									<img src="assets/images/project/project-5.jpg" class="card-img" alt="image">
-								</div>
-								<div class="col-12 col-xl-7">
-									<div class="card-body">
-										<h5 class="card-title"><a href="project.html" class="theme-link">Project Heading</a></h5>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-										<p class="card-text"><small class="text-muted">Client: SalesForce</small></p>
-									</div>
-								</div>
-							</div>
-							<div class="link-mask">
-								<a class="link-mask-link" href="project.html"></a>
-								<div class="link-mask-text">
-									<a class="btn btn-secondary" href="project.html">
-										<i class="fas fa-eye me-2"></i>View Case Study
-									</a>
-								</div>
-							</div><!--//link-mask-->
-						</div><!--//card-->
-					</div><!--//col-->
-					<div class="isotope-item col-md-6 mb-5 webapp backend">
-						<div class="card project-card">
-							<div class="row">
-								<div class="col-12 col-xl-5 card-img-holder">
-									<img src="assets/images/project/project-6.jpg" class="card-img" alt="image">
-								</div>
-								<div class="col-12 col-xl-7">
-									<div class="card-body">
-										<h5 class="card-title"><a href="project.html" class="theme-link">Project Heading</a></h5>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-										<p class="card-text"><small class="text-muted">Client: Uber</small></p>
-									</div>
-								</div>
-							</div>
-							<div class="link-mask">
-								<a class="link-mask-link" href="project.html"></a>
-								<div class="link-mask-text">
-									<a class="btn btn-secondary" href="project.html">
-										<i class="fas fa-eye me-2"></i>View Case Study
-									</a>
-								</div>
-							</div><!--//link-mask-->
-						</div><!--//card-->
-					</div><!--//col-->
-					<div class="isotope-item col-md-6 mb-5 webapp frontend backend">
-						<div class="card project-card">
-							<div class="row">
-								<div class="col-12 col-xl-5 card-img-holder">
-									<img src="assets/images/project/project-7.jpg" class="card-img" alt="image">
-								</div>
-								<div class="col-12 col-xl-7">
-									<div class="card-body">
-										<h5 class="card-title"><a href="project.html" class="theme-link">Project Heading</a></h5>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-										<p class="card-text"><small class="text-muted">Client: Lyft</small></p>
-									</div>
-								</div>
-							</div>
-							<div class="link-mask">
-								<a class="link-mask-link" href="project.html"></a>
-								<div class="link-mask-text">
-									<a class="btn btn-secondary" href="project.html">
-										<i class="fas fa-eye me-2"></i>View Case Study
-									</a>
-								</div>
-							</div><!--//link-mask-->
-						</div><!--//card-->
-					</div><!--//col-->
-					<div class="isotope-item col-md-6 mb-5 webapp frontend">
-						<div class="card project-card">
-							<div class="row">
-								<div class="col-12 col-xl-5 card-img-holder">
-									<img src="assets/images/project/project-8.jpg" class="card-img" alt="image">
-								</div>
-								<div class="col-12 col-xl-7">
-									<div class="card-body">
-										<h5 class="card-title"><a href="project.html" class="theme-link">Project Heading</a></h5>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-										<p class="card-text"><small class="text-muted">Client: GitLab</small></p>
-									</div>
-								</div>
-							</div>
-							<div class="link-mask">
-								<a class="link-mask-link" href="project.html"></a>
-								<div class="link-mask-text">
-									<a class="btn btn-secondary" href="project.html">
-										<i class="fas fa-eye me-2"></i>View Case Study
-									</a>
-								</div>
-							</div><!--//link-mask-->
-						</div><!--//card-->
-					</div><!--//col-->
-				</div><!--//row-->
-			
-		    </div>
-	    </section>
- 
+ <div class="container">
+    <div class="columns">
+      <div class="column col-12">
+        <h1>My Projects</h1>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column col-12">
+        <div class="btn-group">
+          <button class="btn btn-primary filter" data-category="all">All</button>
+          <button class="btn btn-primary filter" data-category="category1">Category 1</button>
+          <button class="btn btn-primary filter" data-category="category2">Category 2</button>
+          <button class="btn btn-primary filter" data-category="category3">Category 3</button>
+        </div>
+      </div>
+    </div>
+    <div class="columns projects-grid">
+      <div class="column col-4 project category1">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://placehold.co/600x400" class="img-responsive">
+          </div>
+          <div class="card-header">
+            <div class="card-title h5">Project 1</div>
+            <div class="card-subtitle text-gray">Category 1</div>
+          </div>
+          <div class="card-body">
+            <p>Project 1 description</p>
+          </div>
+          <div class="card-footer">
+            <a href="project1.html" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="column col-4 project category2">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://placehold.co/600x400" class="img-responsive">
+          </div>
+          <div class="card-header">
+            <div class="card-title h5">Project 2</div>
+            <div class="card-subtitle text-gray">Category 2</div>
+          </div>
+          <div class="card-body">
+            <p>Project 2 description</p>
+          </div>
+          <div class="card-footer">
+            <a href="project2.html" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="column col-4 project category3">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://placehold.co/600x400" class="img-responsive">
+          </div>
+          <div class="card-header">
+            <div class="card-title h5">Project 3</div>
+            <div class="card-subtitle text-gray">Category 3</div>
+          </div>
+          <div class="card-body">
+            <p>Project 3 description</p>
+          </div>
+          <div class="card-footer">
+            <a href="project3.html" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="column col-4 project category1">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://placehold.co/600x400" class="img-responsive">
+          </div>
+          <div class="card-header">
+            <div class="card-title h5">Project 1</div>
+            <div class="card-subtitle text-gray">Category 1</div>
+          </div>
+          <div class="card-body">
+            <p>Project 1 description</p>
+          </div>
+          <div class="card-footer">
+            <a href="project1.html" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="column col-4 project category2">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://placehold.co/600x400" class="img-responsive">
+          </div>
+          <div class="card-header">
+            <div class="card-title h5">Project 2</div>
+            <div class="card-subtitle text-gray">Category 2</div>
+          </div>
+          <div class="card-body">
+            <p>Project 2 description</p>
+          </div>
+          <div class="card-footer">
+            <a href="project2.html" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="column col-4 project category3">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://placehold.co/600x400" class="img-responsive">
+          </div>
+          <div class="card-header">
+            <div class="card-title h5">Project 3</div>
+            <div class="card-subtitle text-gray">Category 3</div>
+          </div>
+          <div class="card-body">
+            <p>Project 3 description</p>
+          </div>
+          <div class="card-footer">
+            <a href="project3.html" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="filter">
+  <input type="radio" id="tag-0" class="filter-tag" name="filter-radio" hidden checked>
+  <input type="radio" id="tag-1" class="filter-tag" name="filter-radio" hidden>
+  <input type="radio" id="tag-2" class="filter-tag" name="filter-radio" hidden>
+
+  <div class="filter-nav">
+    <label class="chip" for="tag-0">All</label>
+    <label class="chip" for="tag-1">Action</label>
+    <label class="chip" for="tag-2">Roleplaying</label>
+  </div>
+
+  <div class="filter-body">
+    <div class="filter-item card" data-tag="tag-1">
+      <!-- Filter item content -->
+    </div>
+    <div class="filter-item card" data-tag="tag-2">
+      <!-- Filter item content -->
+    </div>
+    <!-- Filter items -->
+  </div>
+</div>
 <?php get_footer(); ?>

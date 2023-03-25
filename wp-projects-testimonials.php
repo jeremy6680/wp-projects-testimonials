@@ -45,7 +45,7 @@ $testimonial_metabox = new TestimonialMetabox();
 require_once WPPT_PLUGIN_PATH . 'inc/admin/class-projects-settings.php';
 $projects_settings = new Projects_Settings();
 
-// 6. Enqueues
+// 6. Front Enqueues
 require_once WPPT_PLUGIN_PATH . 'inc/front/class-front-enqueues.php';
 $front_enqueues = new Front_Enqueues();
 
