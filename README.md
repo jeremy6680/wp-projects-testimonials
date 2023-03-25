@@ -4,7 +4,8 @@ The WP Projects and Testimonials Plugin (WPPT Plugin) is a WordPress plugin that
 ## Installation
 1. Download the WP Projects and Testimonials Plugin from the WordPress plugin repository or from the GitHub repository.
 2. Upload the plugin to your WordPress website.
-3. Activate the plugin.
+3. Activate the WP Projects Testimonials plugin through the 'Plugins' menu in WordPress.
+4. Navigate to the WP Projects Testimonials settings page and configure the plugin options.
 
 ## Features
 
@@ -23,6 +24,24 @@ The WPPT Plugin comes with a single and archive template for the Projects post t
 
 ### Shortcode
 Each testimonial created with the WPPT Plugin has its own shortcode that you can use anywhere on your website. You can display your testimonials in a slider or in any other way you like.
+
+## Customization
+
+###Customizing the Styles
+
+You can customize the plugin's styles by modifying the style.scss file located in the scss folder of the plugin. To compile your Sass code into CSS, you'll need to have Node.js and npm installed on your system. If you don't have them installed, you can download them from the official Node.js website.
+
+To compile your Sass code, follow these steps:
+
+1. Open a terminal and navigate to the root folder of the WP Projects Testimonials plugin.
+2. Run the following command to install the required npm packages:
+`npm install`
+
+3. Run the following command to compile your Sass code into CSS:
+`gulp`
+This command will watch for changes to your Sass files and automatically compile them into CSS. The compiled CSS file will be saved in the assets/css folder of the plugin.
+
+To stop watching for changes, press `Ctrl+C` in the terminal.
 
 ## Support
 If you encounter any issues with the WPPT Plugin, please don't hesitate to contact us at support@wpsafeandsound.com.
