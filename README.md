@@ -27,7 +27,7 @@ Each testimonial created with the WPPT Plugin has its own shortcode that you can
 
 ## Customization
 
-###Customizing the Styles
+### Customizing the Styles
 
 You can customize the plugin's styles by modifying the style.scss file located in the scss folder of the plugin. To compile your Sass code into CSS, you'll need to have Node.js and npm installed on your system. If you don't have them installed, you can download them from the official Node.js website.
 
@@ -35,10 +35,13 @@ To compile your Sass code, follow these steps:
 
 1. Open a terminal and navigate to the root folder of the WP Projects Testimonials plugin.
 2. Run the following command to install the required npm packages:
-`npm install`
-
+```
+npm install`
+```
 3. Run the following command to compile your Sass code into CSS:
-`gulp`
+```
+gulp
+```
 This command will watch for changes to your Sass files and automatically compile them into CSS. The compiled CSS file will be saved in the assets/css folder of the plugin.
 
 To stop watching for changes, press `Ctrl+C` in the terminal.
