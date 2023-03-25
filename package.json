@@ -6,19 +6,6 @@
   "scripts": {
     "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeremy6680/wp-projects-testimonials.git"
-  },
-  "author": "Jeremy Marchandeau",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jeremy6680/wp-projects-testimonials/issues"
-  },
-  "homepage": "https://github.com/jeremy6680/wp-projects-testimonials#readme",
-  "dependencies": {
-    "spectre.css": "^0.5.9"
-  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
