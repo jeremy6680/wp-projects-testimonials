@@ -93,7 +93,6 @@ get_header();
     </div><!--//client-meta-->
   </div><!--//card-footer-->
 </div><!--//client-quote-->
-
 	    
 <section class="promo-section bg-dark py-5 my-48 text-center">
   <div class="container mx-auto max-width-lg">

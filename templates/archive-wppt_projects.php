@@ -2,12 +2,14 @@
 
 get_header(); ?>
  
+ <div class="hero hero-sm bg-dark">
+  <div class="hero-body container">
+    <h1><?php echo get_the_archive_title(); ?></h1>
+    <p class="lead">Project intro goes here. In the intro it's a good idea to answer a potential client's need/problem so it's more likely to land your next project or job.</p>
+  </div>
+</div>
+
  <div class="container">
-    <div class="columns">
-      <div class="column col-12">
-        <h1>My Projects</h1>
-      </div>
-    </div>
     <div class="columns">
       <div class="column col-12">
         <div class="btn-group">
