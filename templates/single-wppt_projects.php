@@ -9,6 +9,21 @@ get_header();
   </div>
 </div>
 
+<div class="project-client">
+  <?php
+  $client_terms = get_the_terms($post->ID, 'client');
+  if ($client_terms && !is_wp_error($client_terms)) {
+    foreach ($client_terms as $client_term) {
+      $client_details = WPPT_Helper::get_client_details($client_term->term_id);
+      $client_name = $client_details['name'];
+      $client_description = $client_details['description'];
+      $client_industry = $client_details['industry'];
+      $client_website = $client_details['website'];
+      $client_size = $client_details['size'];
+    }
+  }
+  ?>
+</div>
 
 
   <div class="container">
@@ -18,16 +33,27 @@ get_header();
       </div>
       <div class="card-body" style="flex-basis: 67%;">
         <div class="card-header px-0">
-          <h3 class="card-title client-name">Client Name</h3>
+          <h3 class="card-title client-name"><?php echo esc_html($client_name); ?></h3>
         </div>
         <ul class="client-meta">
-          <li><i class="fas fa-industry fa-fw"></i> <strong>Industry:</strong> Tech</li>
-          <li><i class="fas fa-users fa-fw"></i> <strong>Size:</strong> 100+</li>
-          <li><i class="fas fa-link fa-fw"></i> <strong>Website:</strong> <a class="text-secondary" href="#">clientsite.com</a></li>
+          <?php
+            if (!empty($client_industry)) {
+              echo '<li><i class="fas fa-industry fa-fw"></i> <strong>Industry:</strong> ' . esc_html($client_industry) . '</li>';
+            }
+            if (!empty($client_website)) {
+              echo '<li><i class="fas fa-link fa-fw"></i> <strong>Website:</strong> <a href="' . esc_html($client_website) . '">' . esc_html($client_website) . '</a></li>';
+            }
+            if (!empty($client_size)) {
+              echo '<li><i class="fas fa-users fa-fw"></i> <strong>Size:</strong> ' . esc_html($client_size) . '</li>';
+            }
+          ?>
         </ul>
         <div class="client-bio my-2">
-          <p>Short description of the client and project requirements. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-        </div>
+        <?php
+        if (!empty($client_description)) {
+          echo wpautop($client_description);
+        } ?>
+      </div>
       </div>
     </div>
   </div>
