@@ -39,78 +39,78 @@ class WPPT_Helper {
     ];
   }
 
-/**
- * Retrieves the details of the first testimonial associated with a project's client.
- *
- * @param int $post_id The ID of the project post.
- * @return array An array containing the testimonial details, or an empty array if no testimonials are found.
- */
-public static function get_project_testimonial_details($post_id) {
-  $client_id = self::get_project_client_id($post_id);
-  $testimonials = self::get_client_testimonials($client_id);
+  /**
+   * Retrieves the details of the first testimonial associated with a project's client.
+   *
+   * @param int $post_id The ID of the project post.
+   * @return array An array containing the testimonial details, or an empty array if no testimonials are found.
+   */
+  public static function get_project_testimonial_details($post_id) {
+    $client_id = self::get_project_client_id($post_id);
+    $testimonials = self::get_client_testimonials($client_id);
 
-  if (!empty($testimonials)) {
-    // if there are testimonials for the client, return the first one
-    return self::get_testimonial_details($testimonials[0]->ID);
-  } else {
-    // if there are no testimonials for the client, return an empty array
-    return array();
+    if (!empty($testimonials)) {
+      // if there are testimonials for the client, return the first one
+      return self::get_testimonial_details($testimonials[0]->ID);
+    } else {
+      // if there are no testimonials for the client, return an empty array
+      return array();
+    }
   }
-}
 
-/**
-* Retrieves the ID of the client associated with a project.
-*
-* @param int $post_id The ID of the project post.
-* @return int The ID of the client, or 0 if no client is found.
-*/
-private static function get_project_client_id($post_id) {
-  $client_id = 0;
-  $terms = get_the_terms($post_id, 'client');
-  if ($terms && !is_wp_error($terms)) {
-    $client_id = $terms[0]->term_id;
+  /**
+  * Retrieves the ID of the client associated with a project.
+  *
+  * @param int $post_id The ID of the project post.
+  * @return int The ID of the client, or 0 if no client is found.
+  */
+  private static function get_project_client_id($post_id) {
+    $client_id = 0;
+    $terms = get_the_terms($post_id, 'client');
+    if ($terms && !is_wp_error($terms)) {
+      $client_id = $terms[0]->term_id;
+    }
+    return $client_id;
   }
-  return $client_id;
-}
 
-/**
-* Retrieves an array of testimonials associated with a client.
-*
-* @param int $client_id The ID of the client.
-* @return array An array of testimonial posts associated with the client.
-*/
-private static function get_client_testimonials($client_id) {
-  $testimonials = array();
-  if ($client_id) {
-    $testimonials = get_posts(array(
-      'post_type' => 'wppt_testimonials',
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'client',
-          'field' => 'term_id',
-          'terms' => $client_id
+  /**
+  * Retrieves an array of testimonials associated with a client.
+  *
+  * @param int $client_id The ID of the client.
+  * @return array An array of testimonial posts associated with the client.
+  */
+  private static function get_client_testimonials($client_id) {
+    $testimonials = array();
+    if ($client_id) {
+      $testimonials = get_posts(array(
+        'post_type' => 'wppt_testimonials',
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'client',
+            'field' => 'term_id',
+            'terms' => $client_id
+          )
         )
-      )
-    ));
+      ));
+    }
+    return $testimonials;
   }
-  return $testimonials;
-}
 
-/**
-* Retrieves the details of a testimonial post.
-*
-* @param int $post_id The ID of the testimonial post.
-* @return array An array containing the testimonial details.
-*/
-private static function get_testimonial_details($post_id) {
-  $testimonial = array(
-    'text_author' => get_post_meta($post_id, 'text_author', true),
-    'text_job' => get_post_meta($post_id, 'text_job', true),
-    'media_picture' => wp_get_attachment_image_src(get_post_meta($post_id, 'media_picture', true), 'full')[0],
-    'textarea_text' => get_post_meta($post_id, 'textarea_text', true)
-  );
-  return $testimonial;
-}
+  /**
+  * Retrieves the details of a testimonial post.
+  *
+  * @param int $post_id The ID of the testimonial post.
+  * @return array An array containing the testimonial details.
+  */
+  private static function get_testimonial_details($post_id) {
+    $testimonial = array(
+      'text_author' => get_post_meta($post_id, 'text_author', true),
+      'text_job' => get_post_meta($post_id, 'text_job', true),
+      'media_picture' => wp_get_attachment_image_src(get_post_meta($post_id, 'media_picture', true), 'medium')[0],
+      'textarea_text' => get_post_meta($post_id, 'textarea_text', true)
+    );
+    return $testimonial;
+  }
   
 }
   

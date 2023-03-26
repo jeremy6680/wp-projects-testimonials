@@ -4,8 +4,8 @@ get_header();
 
 <div class="hero hero-sm bg-dark">
   <div class="hero-body container">
-    <h1>Case Study: Project Name</h1>
-    <p class="lead">Project intro goes here. In the intro it's a good idea to answer a potential client's need/problem so it's more likely to land your next project or job.</p>
+    <h1>Case Study: <?php the_title(); ?></h1>
+    <p class="lead"><?php the_excerpt(); ?></p>
   </div>
 </div>
 
@@ -79,33 +79,19 @@ $post_id = get_the_ID();
 $testimonial_details = WPPT_Helper::get_project_testimonial_details($post_id);
 
 if (!empty($testimonial_details)) { ?>
-<div class="project-section mb-5 container">
-  <h3 class="project-section-title mb-3">Client Testimonial</h3>
-</div><!--//project-section-->
-<div class="card client-quote container bg-secondary">
-  <div class="card-body">
-    <blockquote class="quote-content">
-      <?php echo esc_html($testimonial_details['textarea_text']); ?>
-    </blockquote>
-    <i class="fas fa-quote-left"></i>
-  </div><!--//card-body-->
-  <div class="card-footer">
-    <div class="client-meta">
-      <div class="source-profile">
-        <img src="<?php echo $testimonial_details['media_picture']; ?>" alt="image" class="avatar"/>
-      </div>
-      <div class="meta">
-        <div class="name"><?php echo esc_html($testimonial_details['text_author']); ?></div>
-        <div class="info"><?php echo esc_html($testimonial_details['text_job']); ?></div>
-      </div>
-    </div><!--//client-meta-->
-  </div><!--//card-footer-->
-</div><!--//client-quote-->
-<?php }
-?>
+  <div class="project-section mb-5 container">
+    <h3 class="project-section-title mb-3">Client Testimonial</h3>
+  </div><!--//project-section-->
+<?php
+$args = array(
+  'testimonial_text' => isset($testimonial_details['textarea_text']) ? esc_html($testimonial_details['textarea_text']) : '',
+  'author_name' => isset($testimonial_details['text_author']) ? esc_html($testimonial_details['text_author']) : '',
+  'author_job' => isset($testimonial_details['text_job']) ? esc_html($testimonial_details['text_job']) : '',
+  'author_picture' => isset($testimonial_details['media_picture']) ? $testimonial_details['media_picture'] : ''
+);
 
-
-<?php echo do_shortcode('[wppt_testimonial id="55"]'); ?>
+wppt_get_template_part('templates/partials/testimonial', 'template', $args);
+} ?>
 	    
 <section class="promo-section bg-dark py-5 my-48 text-center">
   <div class="container mx-auto max-width-lg">

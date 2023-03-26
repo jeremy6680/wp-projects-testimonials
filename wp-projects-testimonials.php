@@ -56,3 +56,4 @@ $testimonial_admin = new Testimonials_Admin();
 
 // 10. Helper
 require_once WPPT_PLUGIN_PATH . 'inc/helper/class-wppt-helper.php';
+require_once WPPT_PLUGIN_PATH . 'inc/wppt-template-functions.php';
