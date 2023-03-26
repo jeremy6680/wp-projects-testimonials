@@ -64,7 +64,7 @@ class WPPT_Helper {
   * @param int $post_id The ID of the project post.
   * @return int The ID of the client, or 0 if no client is found.
   */
-  private static function get_project_client_id($post_id) {
+  public static function get_project_client_id($post_id) {
     $client_id = 0;
     $terms = get_the_terms($post_id, 'client');
     if ($terms && !is_wp_error($terms)) {

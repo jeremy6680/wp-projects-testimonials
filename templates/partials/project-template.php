@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card container">
   <div class="card-body">
   <?php
     $project_description = get_post_meta( get_the_ID(), 'wysiwyg_projectdescription', true );
