@@ -33,7 +33,7 @@ get_header();
       </div>
       <div class="card-body" style="flex-basis: 67%;">
         <div class="card-header px-0">
-          <h3 class="card-title client-name"><?php echo esc_html($client_name); ?></h3>
+          <h3 class="card-title client-name">Client: <?php echo esc_html($client_name); ?></h3>
         </div>
         <ul class="client-meta">
           <?php
@@ -71,28 +71,39 @@ get_header();
     </div>
   </div>
 
+<?php
+// get the current project post ID
+$post_id = get_the_ID();
+
+// get the testimonial details for the project
+$testimonial_details = WPPT_Helper::get_project_testimonial_details($post_id);
+
+if (!empty($testimonial_details)) { ?>
 <div class="project-section mb-5 container">
   <h3 class="project-section-title mb-3">Client Testimonial</h3>
 </div><!--//project-section-->
 <div class="card client-quote container bg-secondary">
   <div class="card-body">
     <blockquote class="quote-content">
-      Simon is a brilliant software engineer! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.
+      <?php echo esc_html($testimonial_details['textarea_text']); ?>
     </blockquote>
     <i class="fas fa-quote-left"></i>
   </div><!--//card-body-->
   <div class="card-footer">
     <div class="client-meta">
       <div class="source-profile">
-        <img src="assets/images/clients/profile-4.png" alt="image" class="avatar"/>
+        <img src="<?php echo $testimonial_details['media_picture']; ?>" alt="image" class="avatar"/>
       </div>
       <div class="meta">
-        <div class="name">James Lee</div>
-        <div class="info">Product Manager, Amazon</div>
+        <div class="name"><?php echo esc_html($testimonial_details['text_author']); ?></div>
+        <div class="info"><?php echo esc_html($testimonial_details['text_job']); ?></div>
       </div>
     </div><!--//client-meta-->
   </div><!--//card-footer-->
 </div><!--//client-quote-->
+<?php }
+?>
+
 	    
 <section class="promo-section bg-dark py-5 my-48 text-center">
   <div class="container mx-auto max-width-lg">
