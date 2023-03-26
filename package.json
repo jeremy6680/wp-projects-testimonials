@@ -10,5 +10,8 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "sass": "^1.60.0"
+  },
+  "dependencies": {
+    "spectre.css": "^0.5.9"
   }
 }

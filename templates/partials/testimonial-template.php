@@ -26,8 +26,8 @@
     <?php if (!empty($author_picture) || !empty($author_name) || !empty($author_job)) : ?>
       <div class="client-meta">
         <?php if (!empty($author_picture)) : ?>
-          <div class="source-profile">
-            <img src="<?php echo $author_picture; ?>" alt="image" class="avatar"/>
+          <div class="source-profile float-left">
+            <img src="<?php echo $author_picture; ?>" alt="image" class="avatar avatar-xl"/>
           </div>
         <?php endif; ?>
         <div class="meta">
