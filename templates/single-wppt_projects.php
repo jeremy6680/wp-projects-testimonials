@@ -104,6 +104,8 @@ if (!empty($testimonial_details)) { ?>
 <?php }
 ?>
 
+
+<?php echo do_shortcode('[wppt_testimonial id="55"]'); ?>
 	    
 <section class="promo-section bg-dark py-5 my-48 text-center">
   <div class="container mx-auto max-width-lg">
