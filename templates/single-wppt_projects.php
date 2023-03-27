@@ -46,13 +46,14 @@ get_header();
    */
 
   $testimonial_details = WPPT_Helper::get_project_testimonial_details($post_id);
+  $display_testimonials = get_option('wppt-display-testimonials');
 
   /**
-    * Checks if the testimonial details array is not empty.
-    * If not empty, displays the client testimonial section and passes the testimonial details to the testimonial template.
+    * Checks if the testimonial details array is not empty and if the checkbox is checked.
+    * If not empty or if is checked, displays the client testimonial section and passes the testimonial details to the testimonial template.
     */
   
-  if (!empty($testimonial_details)) { ?>
+  if (!empty($testimonial_details) && $display_testimonials) { ?>
     <div class="project-section mb-5 container">
       <h3 class="project-section-title mb-3">Client Testimonial</h3>
     </div><!--//project-section-->

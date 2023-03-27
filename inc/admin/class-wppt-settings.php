@@ -1,7 +1,7 @@
 <?php
-// Settings Page: Projects_Settings
+// Settings Page: WPPTSettings
 // Retrieving values: get_option( 'your_field_id' )
-class Projects_Settings {
+class WPPT_Settings {
 
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'wph_create_settings' ) );
@@ -10,10 +10,10 @@ class Projects_Settings {
 	}
 
 	public function wph_create_settings() {
-		$page_title = 'Projects Settings';
-		$menu_title = 'Projects Settings';
+		$page_title = 'WPPT Settings';
+		$menu_title = 'WPPT Settings';
 		$capability = 'manage_options';
-		$slug = 'ProjectsSettings';
+		$slug = 'WPPTSettings';
 		$callback = array($this, 'wph_settings_content');
                 add_options_page($page_title, $menu_title, $capability, $slug, $callback);
 		
@@ -21,12 +21,12 @@ class Projects_Settings {
     
 	public function wph_settings_content() { ?>
 		<div class="wrap">
-			<h1>Projects Settings</h1>
+			<h1>WPPT Settings</h1>
 			<?php settings_errors(); ?>
 			<form method="POST" action="options.php">
 				<?php
-					settings_fields( 'ProjectsSettings' );
-					do_settings_sections( 'ProjectsSettings' );
+					settings_fields( 'WPPTSettings' );
+					do_settings_sections( 'WPPTSettings' );
 					submit_button();
 				?>
 			</form>
@@ -34,23 +34,22 @@ class Projects_Settings {
 	}
 
 	public function wph_setup_sections() {
-		add_settings_section( 'ProjectsSettings_section', 'Settings for Projects', array(), 'ProjectsSettings' );
+		add_settings_section( 'WPPTSettings_section', 'Settings for Projects & Testimonials', array(), 'WPPTSettings' );
 	}
 
 	public function wph_setup_fields() {
 		$fields = array(
                     array(
-                        'section' => 'ProjectsSettings_section',
-                        'label' => 'Projects slug',
-                        'placeholder' => 'projects',
-                        'id' => 'Projects slug_text',
-                        'desc' => 'Choose a slug for your projects',
-                        'type' => 'text',
+                        'section' => 'WPPTSettings_section',
+                        'label' => 'Display Testimonials?',
+                        'id' => 'wppt-display-testimonials',
+                        'desc' => 'Display Testimonials on Projects Single?',
+                        'type' => 'checkbox',
                     )
 		);
 		foreach( $fields as $field ){
-			add_settings_field( $field['id'], $field['label'], array( $this, 'wph_field_callback' ), 'ProjectsSettings', $field['section'], $field );
-			register_setting( 'ProjectsSettings', $field['id'] );
+			add_settings_field( $field['id'], $field['label'], array( $this, 'wph_field_callback' ), 'WPPTSettings', $field['section'], $field );
+			register_setting( 'WPPTSettings', $field['id'] );
 		}
 	}
 	public function wph_field_callback( $field ) {
@@ -62,6 +61,14 @@ class Projects_Settings {
 		switch ( $field['type'] ) {
             
             
+                        case 'checkbox':
+                            printf('<input %s id="%s" name="%s" type="checkbox" value="1">',
+                                $value === '1' ? 'checked' : '',
+                                $field['id'],
+                                $field['id']
+                        );
+                            break;
+
 			default:
 				printf( '<input name="%1$s" id="%1$s" type="%2$s" placeholder="%3$s" value="%4$s" />',
 					$field['id'],
@@ -77,4 +84,4 @@ class Projects_Settings {
 		}
 	}
     
-}                
+}
