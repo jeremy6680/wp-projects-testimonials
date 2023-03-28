@@ -56,7 +56,7 @@ class Projects_CPT {
       'publicly_queryable'    => true,
       'capability_type'       => 'post',
       'rewrite'               => array('slug' => 'projects'),
-      'taxonomies'            => array('Client'),
+      'taxonomies'            => array('client', 'project_type'),
     );
     register_post_type( 'wppt_projects', $args );
   }

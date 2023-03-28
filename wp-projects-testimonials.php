@@ -26,7 +26,9 @@ $testimonials_cpt = new Testimonials_CPT();
 
 // 3. Custom Taxonomies
 require_once WPPT_PLUGIN_PATH . 'inc/taxo/class-client-taxonomy.php';
+require_once WPPT_PLUGIN_PATH . 'inc/taxo/class-project-type-taxonomy.php';
 $client_taxonomy = new Client_Taxonomy();
+$project_type_taxonomy = new ProjectType_Taxonomy();
 
 // 4. Metaboxes
 require_once WPPT_PLUGIN_PATH . 'inc/metaboxes/class-project-metabox.php';
