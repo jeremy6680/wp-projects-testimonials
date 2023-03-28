@@ -45,6 +45,46 @@ class WPPT_Settings {
                         'id' => 'wppt-display-testimonials',
                         'desc' => 'Display Testimonials on Projects Single?',
                         'type' => 'checkbox',
+                    ),
+        
+                    array(
+                        'section' => 'WPPTSettings_section',
+                        'label' => 'Display CTA?',
+                        'id' => 'wppt-display-cta',
+                        'desc' => 'Display CTA on Projects Single?',
+                        'type' => 'checkbox',
+                    ),
+        
+                    array(
+                        'section' => 'WPPTSettings_section',
+                        'label' => 'CTA Title',
+                        'id' => 'wppt-cta-title',
+                        'desc' => 'Title for the CTA section',
+                        'type' => 'text',
+                    ),
+        
+                    array(
+                        'section' => 'WPPTSettings_section',
+                        'label' => 'CTA Text',
+                        'id' => 'wppt-cta-text',
+                        'desc' => 'Text for the CTA section',
+                        'type' => 'textarea',
+                    ),
+        
+                    array(
+                        'section' => 'WPPTSettings_section',
+                        'label' => 'CTA button title',
+                        'id' => 'wppt-cta-button-title',
+                        'desc' => 'Title for the CTA button',
+                        'type' => 'text',
+                    ),
+        
+                    array(
+                        'section' => 'WPPTSettings_section',
+                        'label' => 'CTA button link',
+                        'id' => 'wppt-cta-button-link',
+                        'desc' => 'Link for the CTA button',
+                        'type' => 'url',
                     )
 		);
 		foreach( $fields as $field ){
@@ -69,6 +109,14 @@ class WPPT_Settings {
                         );
                             break;
 
+                        case 'textarea':
+                            printf( '<textarea name="%1$s" id="%1$s" placeholder="%2$s" rows="5" cols="50">%3$s</textarea>',
+                                $field['id'],
+                                $placeholder,
+                                $value
+                                );
+                                break;
+            
 			default:
 				printf( '<input name="%1$s" id="%1$s" type="%2$s" placeholder="%3$s" value="%4$s" />',
 					$field['id'],
