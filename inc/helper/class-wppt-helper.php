@@ -111,6 +111,50 @@ class WPPT_Helper {
     );
     return $testimonial;
   }
+
+  /**
+   * Generates filter buttons for project types.
+   *
+   * @return string $html - The HTML code for the filter buttons.
+   */
+  public static function generate_project_type_filter_buttons() {
+    // Get all project type terms.
+    $terms = get_terms( array(
+        'taxonomy' => 'project_type',
+        'hide_empty' => true,
+    ) );
+    $html = '';
+    // If there are terms and no errors, generate the filter buttons.
+    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+        // Add a button for all project types.
+        $html .= '<button class="btn btn-primary filter" data-category="all">All</button>';
+        // Loop through each project type term and add a button for it.
+        foreach ( $terms as $term ) {
+            $html .= '<button class="btn btn-primary filter" data-category="' . esc_attr( $term->slug ) . '">' . esc_html( $term->name ) . '</button>';
+        }
+    }
+    // Return the HTML code for the filter buttons.
+    return $html;
+  }
+
+  /**
+   * Retrieves the project type terms associated with a given post ID.
+   *
+   * @param int $post_id The ID of the post to retrieve project type terms for.
+   * @param string $field Optional. The field to retrieve from the project type term object. Default is 'slug'.
+   * Other possible choice for $field is 'name'.
+   * @return array An array of project type terms.
+   */
+  public static function get_project_type_terms( $post_id, $field = 'slug' /* or 'name' */ ) {
+    $project_type_terms = get_the_terms( $post_id, 'project_type' );
+    $terms = array();
+    if ( $project_type_terms && ! is_wp_error( $project_type_terms ) ) {
+        foreach ( $project_type_terms as $term ) {
+            $terms[] = $term->$field;
+        }
+    }
+    return $terms;
+  }
   
 }
   

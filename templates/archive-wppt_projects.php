@@ -9,14 +9,14 @@ get_header(); ?>
   </div>
 </div>
 
+
+
  <div class="container">
     <div class="columns">
       <div class="column col-12">
-        <div class="btn-group">
-          <button class="btn btn-primary filter" data-category="all">All</button>
-          <button class="btn btn-primary filter" data-category="category1">Category 1</button>
-          <button class="btn btn-primary filter" data-category="category2">Category 2</button>
-        </div>
+        <div class="filter-buttons btn-group">
+          <?php echo WPPT_Helper::generate_project_type_filter_buttons(); ?>
+        </div><!--//filter-buttons-->
       </div>
     </div>
     <div class="columns projects-grid">
@@ -25,22 +25,23 @@ get_header(); ?>
         if ( have_posts() ) :
           while ( have_posts() ) :
               the_post(); ?>
-            <div class="column col-4 project category1">
-              <div class="card">
-                <div class="card-image">
-                  <img src="https://placehold.co/600x400" class="img-responsive">
-                </div>
-                <div class="card-header">
-                  <div class="card-title h5"><?php the_title(); ?></div>
-                  <div class="card-subtitle text-gray">Client : <?php echo WPPT_Helper::get_project_client_name(get_the_ID()); ?></div>
-                </div>
-                <div class="card-body">
-                  <p><?php the_excerpt(); ?></p>
-                </div>
-                <div class="card-footer">
-                  <a href="<?php the_permalink(); ?>" class="btn btn-primary">Learn more</a>
-                </div>
-              </div>
+            <div class="column col-4 project <?php
+              $project_type_slugs = WPPT_Helper::get_project_type_terms( get_the_ID() );
+              if ( ! empty( $project_type_slugs ) ) {
+                  echo esc_html( implode( ', ', $project_type_slugs ) );
+              }
+              ?>">
+              <?php
+                /**
+                 * This code includes a WordPress template part for a project tease.
+                 *
+                 * @param string $template The name of the template file to include.
+                 * @param string $slug     The slug of the template file to include.
+                 *
+                 * @return void
+                 */
+                wppt_get_template_part('templates/partials/project-tease', 'template' ); 
+                ?>
             </div>
           <?php
           endwhile;
