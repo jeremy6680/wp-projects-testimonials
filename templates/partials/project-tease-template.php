@@ -10,26 +10,13 @@
  * The "Learn more" button links to the project's permalink and is displayed using the _e function.
  */
 ?>
- <div class="card">
-    <div class="card-image">
-        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>" class="img-responsive">
-    </div>
-    <div class="card-header">
-        <div class="card-title h5"><?php the_title(); ?></div>
-        <div class="card-subtitle text-gray"><?php _e( 'Client : ', 'wppt-plugin' ); ?><?php echo WPPT_Helper::get_project_client_name(get_the_ID()); ?></div>
-        <div class="card-subtitle text-gray"><?php _e( 'Type : ', 'wppt-plugin' ); ?>
-            <?php
-            $project_type_names = WPPT_Helper::get_project_type_terms( get_the_ID(), 'name' );
-            if ( ! empty( $project_type_names ) ) {
-                echo esc_html( implode( ', ', $project_type_names ) );
-            }
-            ?>
-        </div>
-    </div>
-    <div class="card-body">
-        <p><?php the_excerpt(); ?></p>
-    </div>
-    <div class="card-footer">
-        <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php _e( 'Learn more', 'wppt-plugin' ); ?></a>
-    </div>
+<div class="col-6 flex-fill p-2 mt-16 mt-xl-10 <?php
+              $project_type_slugs = WPPT_Helper::get_project_type_terms( get_the_ID() );
+              if ( ! empty( $project_type_slugs ) ) {
+                  echo esc_html( implode( ', ', $project_type_slugs ) );
+              }
+              ?>">                  
+    <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" alt="">
+    <h5 class="mb-0 mt-6 lh-lg"><?php the_title(); ?></h5>
+    <p class="mt-2 mb-0 text-uppercase text-muted" style="font-size: 12px;">Art direction</p>
 </div>

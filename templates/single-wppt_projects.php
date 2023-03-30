@@ -75,7 +75,7 @@ get_header();
     */
   $display_cta = get_option('wppt-display-cta');
   if (!empty($display_cta)) { 
-    wppt_get_template_part('templates/partials/cta', 'template', $args);
+    wppt_get_template_part('templates/partials/cta', 'template');
   } ?>
 
 <?php get_footer();

@@ -2,35 +2,23 @@
 
 get_header(); ?>
  
- <div class="hero hero-sm bg-dark">
-  <div class="hero-body container">
-    <h1><?php echo get_the_archive_title(); ?></h1>
-    <p class="lead">Project intro goes here. In the intro it's a good idea to answer a potential client's need/problem so it's more likely to land your next project or job.</p>
-  </div>
-</div>
-
-
-
- <div class="container">
-    <div class="columns">
-      <div class="column col-12">
-        <div class="filter-buttons btn-group">
-          <?php echo WPPT_Helper::generate_project_type_filter_buttons(); ?>
-        </div><!--//filter-buttons-->
-      </div>
+ <section class="py-24 bg-white position-relative">
+  <div class="position-relative container" style="z-index: 1;">
+    <div>
+      <span class="text-uppercase text-primary fw-bold">Our works</span>
+      <h1 class="mb-0 lh-sm"><?php echo get_the_archive_title(); ?></h1>
+      <ul class="mt-16 list-unstyled mb-0 d-md-flex flex-wrap">
+        <?php echo WPPT_Helper::generate_project_type_filter_buttons(); ?>
+      </ul>
     </div>
-    <div class="columns projects-grid">
 
-      <?php
-        if ( have_posts() ) :
+          <?php
+        if ( have_posts() ) : ?>
+        <div class="container d-flex flex-wrap mt-4 mt-xl-16 mw-md mw-md-3xl mw-lg-4xl mw-xl-none mx-auto">
+          <?php
           while ( have_posts() ) :
               the_post(); ?>
-            <div class="column col-4 project <?php
-              $project_type_slugs = WPPT_Helper::get_project_type_terms( get_the_ID() );
-              if ( ! empty( $project_type_slugs ) ) {
-                  echo esc_html( implode( ', ', $project_type_slugs ) );
-              }
-              ?>">
+          
               <?php
                 /**
                  * This code includes a WordPress template part for a project tease.
@@ -42,15 +30,32 @@ get_header(); ?>
                  */
                 wppt_get_template_part('templates/partials/project-tease', 'template' ); 
                 ?>
-            </div>
+          
           <?php
-          endwhile;
+          endwhile; ?>
+        </div>
+        <?php 
         else:
         // If no content, display a message
         endif;
       ?>
 
-    </div>
+  <div class="text-center"><a class="btn btn-dark d-block d-md-inline-block" href="#">Show More</a></div>
+  
   </div>
+  <div class="p-20 p-md-40 position-absolute mt-80 top-0 end-0 bg-warning-light"></div>
+  <div class="p-20 p-md-40 position-absolute mb-48 bottom-0 end-0 bg-info-light"></div>
+  <div class="p-20 p-md-40 position-absolute mb-48 top-50 start-0 translate-middle-y mt-12 bg-secondary-light"></div>
+</section>
+
+  <?php
+  /**
+    * Checks if the CTA checkbox is checked.
+    * If is checked, displays the cta section.
+    */
+  $display_cta = get_option('wppt-display-cta');
+  if (!empty($display_cta)) { 
+    wppt_get_template_part('templates/partials/cta', 'template');
+  } ?>
 
 <?php get_footer();

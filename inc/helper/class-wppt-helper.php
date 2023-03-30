@@ -127,10 +127,10 @@ class WPPT_Helper {
     // If there are terms and no errors, generate the filter buttons.
     if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
         // Add a button for all project types.
-        $html .= '<button class="btn btn-primary filter" data-category="all">All</button>';
+        $html .= '<li><a class="text-dark text-uppercase text-decoration-none lh-lg" href="#">All</a></li>';
         // Loop through each project type term and add a button for it.
         foreach ( $terms as $term ) {
-            $html .= '<button class="btn btn-primary filter" data-category="' . esc_attr( $term->slug ) . '">' . esc_html( $term->name ) . '</button>';
+            $html .= '<li class="mt-6 mt-md-0 ms-md-16"><a class="text-primary-dark text-uppercase lh-lg" href="#" data-category="' . esc_attr( $term->slug ) . '">' . esc_html( $term->name ) . '</a></li>';
         }
     }
     // Return the HTML code for the filter buttons.
