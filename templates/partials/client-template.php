@@ -8,32 +8,43 @@
  * @return void
  */
 ?>
-<div class="card container client-card bg-secondary d-flex">
-    <div class="card-image p-2" style="flex-basis: 33%;">
-        <?php if ( has_post_thumbnail() ) { the_post_thumbnail('medium', array('class' => 'img-responsive')); } ?>
-    </div>
-    <div class="card-body" style="flex-basis: 67%;">
-        <div class="card-header px-0">
-            <h3 class="card-title client-name">Client: <?php echo esc_html($name); ?></h3>
-        </div>
-        <ul class="client-meta">
-            <?php
+
+<section class="overflow-hidden">
+  <div class="container">
+    <div class="d-md-flex">
+      <div class="bg-success2-light px-6 px-md-14 py-14 py-xl-20 px-xl-24 mb-14 mw-md-sm mw-lg-lg mw-xl-2xl">
+        <h2 class="mb-7 lh-sm">
+          <span contenteditable="false">Client: <?php echo esc_html($name); ?></span>
+        </h2>
+        <p class="lh-lg mw-md-md">
+        <?php
             if (!empty($industry)) {
-                echo '<li><i class="fas fa-industry fa-fw"></i> <strong>Industry:</strong> ' . esc_html($industry) . '</li>';
+                echo '<span><strong>Industry:</strong> ' . esc_html($industry) . '</span><br/>';
             }
             if (!empty($website)) {
-                echo '<li><i class="fas fa-link fa-fw"></i> <strong>Website:</strong> <a href="' . esc_html($website) . '">' . esc_html($website) . '</a></li>';
+                echo '<span><strong>Website:</strong> <a href="' . esc_html($website) . '">' . esc_html($website) . '</a></span><br/>';
             }
             if (!empty($size)) {
-                echo '<li><i class="fas fa-users fa-fw"></i> <strong>Size:</strong> ' . esc_html($size) . '</li>';
+                echo '<span><strong>Size:</strong> ' . esc_html($size) . '</span><br/>';
             }
             ?>
-        </ul>
-        <div class="client-bio my-2">
+        </p>
+        <p class="mb-6 lh-lg mw-md-md">
         <?php
         if (!empty($description)) {
             echo wpautop($description);
         } ?>
-        </div>
+        </p>
+      </div>
+      <div class="position-relative mw-sm w-100 ms-auto ms-xl-0 ps-md-8 ps-xl-6">
+        <?php if ( has_post_thumbnail() ) { the_post_thumbnail('full', array('class' => 'img-fluid mt-xl-36 ms-xl-n28')); } ?>
+        <a class="d-block" href="#">
+        <img class="position-absolute me-10 mb-10 bottom-0 end-0 img-fluid" src="<?php echo plugin_dir_url(__DIR__); ?>assets/pstls-assets/images/headers/header-3-scroll.png" alt=""></a>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+
+
+    
