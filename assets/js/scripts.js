@@ -1,17 +1,15 @@
-// init Isotope
-var grid = document.querySelector('.grid');
-var iso = new Isotope(grid, {
-// options
+var Shuffle = window.Shuffle;
+var jQuery = window.jQuery;
+
+var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
+  itemSelector: '.image-item',
+  sizer: '.my-sizer-element',
+  buffer: 1,
 });
 
-// filter items on button click
-var filterButtonGroup = document.querySelector('.filter-button-group');
-filterButtonGroup.addEventListener('click', function(event) {
-// only listen for clicks on buttons
-if (!event.target.matches('button')) {
-return;
-}
-
-var filterValue = event.target.getAttribute('data-filter');
-iso.arrange({ filter: filterValue });
+jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
+  var input = evt.currentTarget;
+  if (input.checked) {
+    myShuffle.filter(input.value);
+  }
 });
