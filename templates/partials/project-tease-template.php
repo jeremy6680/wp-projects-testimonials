@@ -10,7 +10,7 @@
  * The "Learn more" button links to the project's permalink and is displayed using the _e function.
  */
 ?>
-<div class="col-6 flex-fill p-2 mt-16 mt-xl-10 <?php
+<div class="col-6 flex-fill p-2 mt-16 mt-xl-10 grid-item <?php
               $project_type_slugs = WPPT_Helper::get_project_type_terms( get_the_ID() );
               if ( ! empty( $project_type_slugs ) ) {
                   echo esc_html( implode( ', ', $project_type_slugs ) );

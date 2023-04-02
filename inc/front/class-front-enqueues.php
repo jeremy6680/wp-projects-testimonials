@@ -30,6 +30,9 @@ class Front_Enqueues {
      * Enqueue scripts function that enqueues custom scripts for the front-end of the website.
      */
     public function enqueue_scripts() {
+        if (  is_post_type_archive( 'wppt_projects' ) ) {
+            wp_enqueue_script( 'isotope', WPPT_PLUGIN_URL . 'assets/js/isotope.pkgd.min.js', array( 'jquery' ), '1.0.0', true );
+        }
         if (  is_singular( 'wppt_projects' ) || is_post_type_archive( 'wppt_projects' ) ) {
             wp_enqueue_script( 'wppt-scripts', WPPT_PLUGIN_URL . 'assets/js/scripts.js', array( 'jquery' ), '1.0.0', true );
         }

@@ -12,9 +12,22 @@ get_header(); ?>
       </ul>
     </div>
 
+
+
+    <div class="button-group filter-button-group">
+  <button data-filter="*">show all</button>
+  <button data-filter=".category-a">category a</button>
+  <button data-filter=".category-b">category b</button>
+  <button data-filter=".alkali, .alkaline-earth">alkali & alkaline-earth</button>
+  <button data-filter=":not(.transition)">not transition</button>
+  <button data-filter=".metal:not(.transition)">metal but not transition</button>
+</div>
+
+
+
           <?php
         if ( have_posts() ) : ?>
-        <div class="container d-flex flex-wrap mt-4 mt-xl-16 mw-md mw-md-3xl mw-lg-4xl mw-xl-none mx-auto">
+        <div class="grid container d-flex flex-wrap mt-4 mt-xl-16 mw-md mw-md-3xl mw-lg-4xl mw-xl-none mx-auto" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 200 } }'>
           <?php
           while ( have_posts() ) :
               the_post(); ?>
