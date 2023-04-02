@@ -46,7 +46,7 @@ get_header(); ?>
 -->
 
 
-
+<!--
     <div class="container mt-3">
   <h1 class="mb-3">Bootstrap 4 grid and filters with <a href="https://vestride.github.io/Shuffle/" target="_blank" rel="noopener">Shuffle</a></h1>
   <div class="row">
@@ -61,10 +61,10 @@ get_header(); ?>
           <input type="radio" name="shuffle-filter" value="all" checked="checked">All
         </label>
         <label class="btn btn-outline-primary">
-          <input type="radio" name="shuffle-filter" value="nature">Nature
+          <input type="radio" name="shuffle-filter" value="category-a">Cat A
         </label>
         <label class="btn btn-outline-primary">
-          <input type="radio" name="shuffle-filter" value="fruit">Fruit
+          <input type="radio" name="shuffle-filter" value="category-b">Cat B
         </label>
         <label class="btn btn-outline-primary">
           <input type="radio" name="shuffle-filter" value="architecture">Architecture
@@ -137,13 +137,40 @@ get_header(); ?>
   </div>
 </div>
 
-
+-->
 
 
 
 
           <?php
         if ( have_posts() ) : ?>
+
+
+
+
+<div class="row mb-3">
+    <div class="col">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-outline-primary active">
+          <input type="radio" name="shuffle-filter" value="all" checked="checked">All
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="shuffle-filter" value="category-a">Cat A
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="shuffle-filter" value="category-b">Cat B
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="shuffle-filter" value="architecture">Architecture
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
         <div class="row my-shuffle shuffle" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 200 } }'>
           <?php
           while ( have_posts() ) :
