@@ -9,24 +9,39 @@
 
         private $fields = array(
           array(
-            'label' => 'Start Date',
-            'id' => 'date_startdate',
+            'label' => 'Completion Date',
+            'id' => 'wppt_completion_date',
             'type' => 'date',
            ),
           array(
-            'label' => 'End Date',
-            'id' => 'date_enddate',
-            'type' => 'date',
+            'label' => 'Project Overview Title',
+            'id' => 'wppt_overview_title',
+            'type' => 'text',
            ),
           array(
-            'label' => 'Project Description',
-            'id' => 'wysiwyg_projectdescription',
+            'label' => 'Project Overview Text',
+            'id' => 'wppt_overview_text',
             'type' => 'wysiwyg',
            ),
           array(
-            'label' => 'Display Testimonial(s) ?',
-            'id' => 'checkbox_displaytestimonial(s)?',
-            'type' => 'checkbox',
+            'label' => 'The Challenge',
+            'id' => 'wppt_challenge_text',
+            'type' => 'textarea',
+           ),
+          array(
+            'label' => 'The Approach',
+            'id' => 'wppt_approach_text',
+            'type' => 'textarea',
+           ),
+          array(
+            'label' => 'The Solution',
+            'id' => 'wppt_solution_text',
+            'type' => 'textarea',
+           ),
+          array(
+            'label' => 'The Results',
+            'id' => 'wppt_results_text',
+            'type' => 'textarea',
            )  
         );
 
@@ -39,7 +54,7 @@
           foreach ( $this->screens as $s ) {
             add_meta_box(
               'Project',
-              __( 'Project', 'wp-projects-testimonials' ),
+              __( 'Project', 'wppt-plugin' ),
               array( $this, 'meta_box_callback' ),
               $s,
               'normal',
@@ -50,7 +65,7 @@
 
         public function meta_box_callback( $post ) {
           wp_nonce_field( 'Project_data', 'Project_nonce' ); 
-          echo "Informations about this project";
+          echo "Informations about this Project";
           $this->field_generator( $post );
         }
 
@@ -65,20 +80,20 @@
               }
             }
             switch ( $field['type'] ) {
+              case 'textarea':
+                $input = sprintf(
+                  '<textarea style="width: 100%%" id="%s" name="%s" rows="5">%s</textarea>',
+                  $field['id'],
+                  $field['id'],
+                  $meta_value
+                );
+                break;
+        
               case 'wysiwyg':
                 ob_start();
                 wp_editor($meta_value, $field['id']);
                 $input = ob_get_contents();
                 ob_end_clean();
-                break;
-        
-              case 'checkbox':
-                $input = sprintf(
-                '<input %s id=" %s" name="%s" type="checkbox" value="1">',
-                $meta_value === '1' ? 'checked' : '',
-                $field['id'],
-                $field['id']
-                );
                 break;
         
               default:
@@ -129,6 +144,7 @@
             }
           }
         }
+
 
       }
       

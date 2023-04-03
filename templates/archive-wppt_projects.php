@@ -7,7 +7,7 @@ get_header(); ?>
     <div>
       <span class="text-uppercase text-primary fw-bold">Our works</span>
       <h1 class="mb-0 lh-sm"><?php echo get_the_archive_title(); ?></h1>
-      <ul class="mt-16 list-unstyled mb-0 d-md-flex flex-wrap">
+      <ul class="mt-16 list-unstyled mb-8 d-md-flex flex-wrap">
         <?php echo WPPT_Helper::generate_project_type_filter_buttons(); ?>
       </ul>
     </div>
@@ -15,7 +15,7 @@ get_header(); ?>
           <?php
         if ( have_posts() ) : ?>
 
-        <div class="row my-shuffle shuffle" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 200 } }'>
+        <div class="row my-shuffle shuffle">
           <?php
           while ( have_posts() ) :
               the_post(); ?>
