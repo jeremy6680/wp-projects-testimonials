@@ -1,6 +1,10 @@
 <?php
     $project_overview_title = get_post_meta( get_the_ID(), 'wppt_overview_title', true );
     $project_overview_text = get_post_meta( get_the_ID(), 'wppt_overview_text', true );
+    $wppt_challenge_text = get_post_meta( get_the_ID(), 'wppt_challenge_text', true );
+    $wppt_approach_text = get_post_meta( get_the_ID(), 'wppt_approach_text', true );
+    $wppt_solution_text = get_post_meta( get_the_ID(), 'wppt_solution_text', true );
+    $wppt_results_text = get_post_meta( get_the_ID(), 'wppt_results_text', true );
     
   ?>
   
@@ -47,22 +51,38 @@
           <div class="col-12 col-md-6 col-xl-5 mb-10">
             <img class="img-fluid" src="<?php echo plugins_url( 'wp-projects-testimonials' ); ?>/assets/pstls-assets/icons/document-clean.svg" alt="">
             <h5 class="mt-8 mb-4 fw-normal text-white font-heading">The Challenge</h5>
-            <p class="lead lh-lg mt-6 text-muted">Take care to develop resources continually and integrity them with previous projects.</p>
+            <p class="lead lh-lg mt-6 text-muted"><?php
+        if ( ! empty( $wppt_challenge_text ) ) {
+        echo $wppt_challenge_text; // wpautop adds HTML paragraph tags
+        } 
+        ?></p>
           </div>
           <div class="col-12 col-md-6 col-xl-5 mb-10">
             <img class="img-fluid" src="<?php echo plugins_url( 'wp-projects-testimonials' ); ?>/assets/pstls-assets/icons/check-circle.svg" alt="">
             <h5 class="mt-8 mb-4 fw-normal text-white font-heading">The Approach</h5>
-            <p class="lead lh-lg mt-6 text-muted">Take care to develop resources continually and integrity them with previous projects.</p>
+            <p class="lead lh-lg mt-6 text-muted"><?php
+        if ( ! empty( $wppt_approach_text ) ) {
+        echo $wppt_approach_text; // wpautop adds HTML paragraph tags
+        } 
+        ?>.</p>
           </div>
           <div class="col-12 col-md-6 col-xl-5 mb-10 mb-lg-0">
             <img class="img-fluid" src="<?php echo plugins_url( 'wp-projects-testimonials' ); ?>/assets/pstls-assets/icons/filters-1.svg" alt="">
             <h5 class="mt-8 mb-4 fw-normal text-white font-heading">The Solution</h5>
-            <p class="lead lh-lg mt-6 text-muted">Take care to develop resources continually and integrity them with previous projects.</p>
+            <p class="lead lh-lg mt-6 text-muted"><?php
+        if ( ! empty( $wppt_solution_text ) ) {
+        echo $wppt_solution_text; // wpautop adds HTML paragraph tags
+        } 
+        ?></p>
           </div>
           <div class="col-12 col-md-6 col-xl-5">
             <img class="img-fluid" src="<?php echo plugins_url( 'wp-projects-testimonials' ); ?>/assets/pstls-assets/icons/users.svg" alt="">
             <h5 class="mt-8 mb-4 fw-normal text-white font-heading">The results</h5>
-            <p class="lead lh-lg mt-6 text-muted">Take care to develop resources continually and integrity them with previous projects.</p>
+            <p class="lead lh-lg mt-6 text-muted"><?php
+        if ( ! empty( $wppt_results_text ) ) {
+        echo $wppt_results_text; // wpautop adds HTML paragraph tags
+        } 
+        ?></p>
           </div>
         </div>
       </div>
