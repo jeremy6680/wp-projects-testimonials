@@ -20,7 +20,7 @@ class Front_Enqueues {
             // Check if Bootstrap is already enqueued
             if ( ! wp_style_is( 'bootstrap', 'enqueued' ) ) {
                 // Enqueue the Bootstrap stylesheet
-                wp_enqueue_style( 'wppt-style', WPPT_PLUGIN_URL . 'assets/css/bootstrap/bootstrap.min.css', array(), '1.0.0', 'all' );
+                wp_enqueue_style( 'bootstrap', WPPT_PLUGIN_URL . 'assets/css/bootstrap/bootstrap.min.css', array(), '1.0.0', 'all' );
             }
             wp_enqueue_style( 'wppt-style', WPPT_PLUGIN_URL . 'assets/css/style.css', array(), '1.0.0', 'all' );
         }

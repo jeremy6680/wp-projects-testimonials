@@ -40,8 +40,6 @@ get_header(); ?>
         // If no content, display a message
         endif;
       ?>
-
-  <div class="text-center"><a class="btn btn-dark d-block d-md-inline-block" href="#">Show More</a></div>
   
   </div>
   <div class="p-20 p-md-40 position-absolute mt-80 top-0 end-0 bg-warning-light"></div>
